@@ -1,0 +1,89 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+  <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+  <id>com.czy.case_conv</id>
+
+  <!-- Public plugin name should be written in Title Case.
+       Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+  <name>Case conversion 2</name>
+
+  <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+     <vendor email="768508825@qq.com" url="https://github.com/sujingkpo">sujingkpo</vendor>
+
+   <description><![CDATA[
+    <p>
+        原插件: case-conversion ,版本升级支持 2024.*
+        原插件地址: case-conversion<a href="https://plugins.jetbrains.com/plugin/10985-case-conversion">https://plugins.jetbrains.com/plugin/10985-case-conversion</a>
+        如有侵权联系删除
+    </p>
+    ]]>
+    </description>
+    <change-notes>
+        <![CDATA[
+            <ul>
+                <li><b>0.0.1</b> 版本升级支持 2024.*</li>
+            </ul>
+        ]]>
+    </change-notes>
+
+  <!-- Product and plugin compatibility requirements.
+       Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <!-- Extension points defined by the plugin.
+       Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+
+
+  <extensions defaultExtensionNs="com.intellij">
+    <applicationService serviceImplementation="com.czy.case_conv.settings.Settings" />
+    <applicationConfigurable
+            parentId="tools"
+            instance="com.czy.case_conv.settings.Configurable"
+            id="com.czy.case_conv.settings.Configurable"
+            displayName="Case conversion"
+    />
+  </extensions>
+
+  <actions>
+    <group id="com.czy.case_conv.convert_case_menu" popup="true" text="Convert Case">
+      <add-to-group group-id="EditMenu" />
+
+      <action id="com.czy.case_conv.SnakeCaseAction" class="com.czy.case_conv.SnakeCaseAction"
+              text="Convert Case: snake__case">
+      </action>
+      <action id="com.czy.case_conv.DashCaseAction" class="com.czy.case_conv.DashCaseAction"
+              text="Convert Case: dash-case">
+      </action>
+      <action id="com.czy.case_conv.SeparateWordsAction" class="com.czy.case_conv.SeparateWordsAction"
+              text="Convert case: separate words">
+      </action>
+      <action id="com.czy.case_conv.CamelCaseAction" class="com.czy.case_conv.CamelCaseAction"
+              text="Convert Case: camelCase">
+      </action>
+      <action id="com.czy.case_conv.PascalCaseAction" class="com.czy.case_conv.PascalCaseAction"
+              text="Convert Case: PascalCase">
+      </action>
+      <action id="com.czy.case_conv.ScreamingSnakeCaseAction"
+              class="com.czy.case_conv.ScreamingSnakeCaseAction" text="Convert Case: SCREAMING__SNAKE__CASE">
+      </action>
+      <action id="com.czy.case_conv.UpperCaseAction" class="com.czy.case_conv.UpperCaseAction"
+              text="Convert Case: UPPER CASE">
+      </action>
+      <action id="com.czy.case_conv.LowerCaseAction" class="com.czy.case_conv.LowerCaseAction"
+              text="Convert Case: lower case">
+      </action>
+      <action id="com.czy.case_conv.FlipCaseAction" class="com.czy.case_conv.FlipCaseAction"
+              text="Convert Case: fLIP cASE">
+      </action>
+      <action id="com.czy.case_conv.TitleCaseAction" class="com.czy.case_conv.TitleCaseAction"
+              text="Convert Case: Title Case">
+      </action>
+      <action id="com.czy.case_conv.SentenceCaseAction" class="com.czy.case_conv.SentenceCaseAction"
+              text="Convert Case: Sentence case">
+      </action>
+      <action id="com.czy.case_conv.DotCaseAction" class="com.czy.case_conv.DotCaseAction"
+              text="Convert Case: dot.case">
+      </action>
+    </group>
+  </actions>
+</idea-plugin>
