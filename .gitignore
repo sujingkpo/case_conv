@@ -15,7 +15,8 @@ build/
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-
+.run
+.idea
 ### Eclipse ###
 .apt_generated
 .classpath
@@ -40,3 +41,4 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+/.idea/workspace.xml
